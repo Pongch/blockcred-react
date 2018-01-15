@@ -31,23 +31,19 @@ web3.eth.contract(
 let block = BlockCert.at('0xA7d5D5f6E9b7b0952eF1FaEF81ba46D637Ba9194');
 
 
-class App extends Component {
+class VerifyOrg extends Component {
 
 
   constructor(props){
     super(props);
 
     this.state = {
-      certID: "173820172",
-      person:"...",
-      certName:"...",
-      date:"...",
-      org:"...",
-      orgAttest:"..."
+      orgID: "0x6a36580fa59f1b8f4865444ab9fe9168b625981c",
+      orgName: " ",
+      orgEmail: " "
     }
 
-    this.getCert = this.getCert.bind(this);
-    this.setID = this.setID.bind(this);
+    this.setOrgID = this.setOrgID.bind(this);
     this.getOrg = this.getOrg.bind(this);
   }
 
@@ -55,42 +51,28 @@ class App extends Component {
 
   }
 
-  setID(event){
+  setOrgID(event){
     let content = event.target.value
-    this.setState({certID:content});
+    this.setState({orgID:content});
   }
 
-  getCert(){
-    let queryID = this.state.certID;
-    console.log(queryID)
-    block.getCertificateById(queryID, (error, res) => {
+  getOrg(){
+    let queryID = this.state.orgID;
+    console.log(queryID);
+    org.getOrganization(queryID, (error, res) => {
       if(!error){
         this.setState({
-          person: res[1],
-          certName: res[3],
-          date: res[2],
-          org: res[4]
+          orgName: res[0],
+          orgEmail: res[1]
         })
+        console.log(res);
       } else {
         console.log("error");
       }
     })
   }
 
-  getOrg(){
-    let orgAddress = this.state.org;
-    org.getOrganization(orgAddress, (error, res)=>{
-      if(!error){
-        this.setState({
-          orgAttest: res[0]
-        })
-      }
-    })
-  }
-
   render() {
-
-
     return (
       <div>
           <div className="navbar-fixed">
@@ -106,31 +88,21 @@ class App extends Component {
             </nav>
         </div>
         <div className="container">
-          <h3>Retrieve Proof of Credential</h3>
-           <div className="row">
+          <h3>Organization Check</h3>
+          <div className="row">
              <div className="input-field col s6">
-               <input type="text" className="validate" id="cert-id" name="id" defaultValue={this.state.certID} onChange={this.setID}/>
-               <label htmlFor="cert" className="active">Certificate ID</label>
-               <button className="waves-effect waves-light btn" id="cert-click" onClick={this.getCert}>Get Certificate</button>
+               <input defaultValue="0x6a36580fa59f1b8f4865444ab9fe9168b625981c" id="org-id" type="text" className="validate" onChange={this.setOrgID}/>
+               <label className="active" htmlFor="first_name2">Organization's address</label>
+               <input type="button" className="waves-effect waves-light btn" name="Find" id="org-click" defaultValue="Find" onClick={this.getOrg}/>
              </div>
-           </div>
-           <h4 className="center-align"><SchoolIcon/></h4>
-           <p className="center-align">To all persons be it known that</p>
-           <h4 className="center-align">{this.state.person}</h4>
-           <p className="center-align">has completed the prescribed studies and satisfied the requirement for:</p>
-           <h4 className="center-align">{this.state.certName}</h4>
-           <p className="center-align">at the date:</p>
-           <h4 className="center-align">{this.state.date}</h4>
-           <p className="center-align">certified by:</p>
-           <p className="center-align">{this.state.org}</p>
-           <div className="card-action" id="proof-auth-btn">
-           </div>
-           <div id="authenticate-field">{this.state.orgAttest}</div>
-           <button className="waves-effect waves-light btn" id="authenticate-click" onClick={this.getOrg}>Check Proof of Authenticity</button>
-          </div>
+            </div>
+            <p>Organization Name:</p> {this.state.orgName}
+            <p>Organization Email:</p> {this.state.orgEmail}
+
+        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default VerifyOrg;
