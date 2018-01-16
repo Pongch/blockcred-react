@@ -39,8 +39,8 @@ class VerifyOrg extends Component {
 
     this.state = {
       orgID: "0x6a36580fa59f1b8f4865444ab9fe9168b625981c",
-      orgName: " ",
-      orgEmail: " "
+      orgName: "...",
+      orgEmail: "..."
     }
 
     this.setOrgID = this.setOrgID.bind(this);
@@ -76,7 +76,7 @@ class VerifyOrg extends Component {
     return (
       <div>
           <div className="navbar-fixed">
-            <nav className="teal lighten-3 z-depth-5">
+            <nav className="amber darken-1 z-depth-5">
               <div className="container">
                 <div className="nav-wrapper">
                   <a href="/blockcred" className="brand-logo">BlockCred</a>
@@ -87,18 +87,21 @@ class VerifyOrg extends Component {
               </div>
             </nav>
         </div>
-        <div className="container">
-          <h3>Organization Check</h3>
-          <div className="row">
-             <div className="input-field col s6">
-               <input defaultValue="0x6a36580fa59f1b8f4865444ab9fe9168b625981c" id="org-id" type="text" className="validate" onChange={this.setOrgID}/>
-               <label className="active" htmlFor="first_name2">Organization's address</label>
-               <input type="button" className="waves-effect waves-light btn" name="Find" id="org-click" defaultValue="Find" onClick={this.getOrg}/>
-             </div>
-            </div>
+        <div className="container top-padding">
+          <div className="card-panel z-depth-4">
+            <h3>Organization Check</h3>
+            <div className="row">
+               <div className="input-field col s6">
+                 <input defaultValue="0x6a36580fa59f1b8f4865444ab9fe9168b625981c" id="org-id" type="text" className="validate" onChange={this.setOrgID}/>
+                 <label className="active" htmlFor="first_name2">Organization's address</label>
+                 <input type="button" className="light-blue darken-1 btn" name="Find" id="org-click" defaultValue="Find" onClick={this.getOrg}/>
+               </div>
+              </div>
+          </div>
+          <div className="card-panel z-depth-4">
             <p>Organization Name:</p> {this.state.orgName}
             <p>Organization Email:</p> {this.state.orgEmail}
-
+          </div>
         </div>
       </div>
     );

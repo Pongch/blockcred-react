@@ -94,7 +94,7 @@ class GetCert extends Component {
     return (
       <div>
           <div className="navbar-fixed">
-            <nav className="teal lighten-3 z-depth-5">
+            <nav className="amber darken-1 z-depth-4">
               <div className="container">
                 <div className="nav-wrapper">
                   <a href="/blockcred" className="brand-logo">BlockCred</a>
@@ -105,29 +105,38 @@ class GetCert extends Component {
               </div>
             </nav>
         </div>
-        <div className="container">
-          <h3>Retrieve Proof of Credential</h3>
+        <div className="container top-padding">
            <div className="row">
-             <div className="input-field col s6">
-               <input type="text" className="validate" id="cert-id" name="id" defaultValue={this.state.certID} onChange={this.setID}/>
-               <label htmlFor="cert" className="active">Certificate ID</label>
-               <button className="waves-effect waves-light btn" id="cert-click" onClick={this.getCert}>Get Certificate</button>
+             <div className="col m6">
+               <div className="card-panel z-depth-4">
+                 <h5 >Retrieve Proof of Credential</h5>
+                 <div className="input-field">
+                 <input type="text" className="validate" id="cert-id" name="id" defaultValue={this.state.certID} onChange={this.setID}/>
+                 <label htmlFor="cert" className="active">Certificate ID</label>
+                 <button className="light-blue darken-1 btn" id="cert-click" onClick={this.getCert}>Get Certificate</button>
+                 </div>
+               </div>
+               <div className="card-panel z-depth-4">
+                 <button className="light-blue darken-1 btn" id="authenticate-click" onClick={this.getOrg}>Check Issuer</button>
+                 <p>This certificate is issued from:</p>
+                 <h5>{this.state.orgAttest}</h5>
+               </div>
              </div>
-           </div>
-           <h4 className="center-align"><SchoolIcon/></h4>
-           <p className="center-align">To all persons be it known that</p>
-           <h4 className="center-align">{this.state.person}</h4>
-           <p className="center-align">has completed the prescribed studies and satisfied the requirement for:</p>
-           <h4 className="center-align">{this.state.certName}</h4>
-           <p className="center-align">at the date:</p>
-           <h4 className="center-align">{this.state.date}</h4>
-           <p className="center-align">certified by:</p>
-           <p className="center-align">{this.state.org}</p>
-           <div className="card-action" id="proof-auth-btn">
-           </div>
-           <div id="authenticate-field">{this.state.orgAttest}</div>
-           <button className="waves-effect waves-light btn" id="authenticate-click" onClick={this.getOrg}>Check Proof of Authenticity</button>
+             <div className="col m6">
+               <div className="card-panel z-depth-4">
+                   <h5 className="center-align"><SchoolIcon style={{width: 64, height: 64}} className="dark-orange"/></h5>
+                   <h5 className="center-align">To all persons be it known that</h5>
+                   <h5 className="center-align">{this.state.person}</h5>
+                   <p className="center-align">has completed the prescribed studies and satisfied the requirement for:</p>
+                   <h5 className="center-align">{this.state.certName}</h5>
+                   <p className="center-align">at the date:</p>
+                   <h5 className="center-align">{this.state.date}</h5>
+                   <p className="center-align">Issued by:</p>
+                   <p className="center-align small-text">{this.state.org}</p>
+                </div>
+             </div>
           </div>
+      </div>
       </div>
     );
   }

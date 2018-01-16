@@ -80,7 +80,7 @@ class RegisterOrg extends Component {
     return (
       <div>
           <div className="navbar-fixed">
-            <nav className="teal lighten-3 z-depth-5">
+            <nav className="amber darken-1 z-depth-5">
               <div className="container">
                 <div className="nav-wrapper">
                   <a href="/blockcred" className="brand-logo">BlockCred</a>
@@ -91,17 +91,19 @@ class RegisterOrg extends Component {
               </div>
             </nav>
         </div>
-        <div className="container">
-          <h3>Register Your Organization</h3>
-           <div className="input-field col s12">
-             <input defaultValue="" id="person-name" type="text" className="validate"onChange={this.setOrgName}/>
-             <label className="active" htmlFor="person-name">Organization Name</label>
-           </div>
-           <div className="input-field col s12">
-             <input defaultValue="" id="degree-name" type="text" className="validate" onChange={this.setOrgEmail}/>
-             <label className="active" htmlFor="degree-name">Organization Email</label>
-             <input type="button" className="waves-effect waves-light btn" name="register" onClick={this.registerOrg} id="degree-click" value="REGISTER"/>
-           </div>
+        <div className="container top-padding">
+          <div className="card-panel z-depth-4">
+            <h5>Register Your Organization</h5>
+             <div className="input-field col s12">
+               <input defaultValue="" id="person-name" type="text" className="validate"onChange={this.setOrgName}/>
+               <label className="active" htmlFor="person-name">Organization Name</label>
+             </div>
+             <div className="input-field col s12">
+               <input defaultValue="" id="degree-name" type="text" className="validate" onChange={this.setOrgEmail}/>
+               <label className="active" htmlFor="degree-name">Organization Email</label>
+               <input type="button" className="light-blue darken-1 btn" name="register" onClick={this.registerOrg} id="degree-click" value="REGISTER"/>
+             </div>
+            </div>
           </div>
         </div>
     );

@@ -96,7 +96,7 @@ class RegisterCert extends Component {
     return (
       <div>
           <div className="navbar-fixed">
-            <nav className="teal lighten-3 z-depth-5">
+            <nav className="amber darken-1 z-depth-5">
               <div className="container">
                 <div className="nav-wrapper">
                   <a href="/blockcred" className="brand-logo">BlockCred</a>
@@ -107,25 +107,27 @@ class RegisterCert extends Component {
               </div>
             </nav>
         </div>
-        <div className="container">
-          <h3>Register Your Certificate</h3>
-           <div className="input-field col s12">
-             <input defaultValue="" id="person-name" type="text" className="validate"onChange={this.setPerson}/>
-             <label className="active" htmlFor="person-name">Persons Name</label>
-           </div>
-           <div className="input-field col s12">
-             <input defaultValue="" id="degree-name" type="text" className="validate" onChange={this.setCertName}/>
-             <label className="active" htmlFor="degree-name">Degree Name</label>
-           </div>
-           <div className="input-field col s12">
-             <input defaultValue="" id="degree-id" type="text" className="validate" onChange={this.setCertID}/>
-             <label className="active" htmlFor="degree-id">Degree Unique ID NO.</label>
-           </div>
-           <div className="input-field col s12">
-             <input defaultValue="" id="degree-date" type="text" className="validate" onChange={this.setCertDate}/>
-             <label className="active" htmlFor="degree-date">Degree Issuance Date</label>
-             <input type="button" className="waves-effect waves-light btn" name="register" onClick={this.registerCert} id="degree-click" value="REGISTER"/>
-           </div>
+        <div className="container top-padding">
+          <div className="card-panel z-depth-4">
+               <h5>Register Your Certificate</h5>
+               <div className="input-field col s12">
+                 <input defaultValue="" id="person-name" type="text" className="validate"onChange={this.setPerson}/>
+                 <label className="active" htmlFor="person-name">Persons Name</label>
+               </div>
+               <div className="input-field col s12">
+                 <input defaultValue="" id="degree-name" type="text" className="validate" onChange={this.setCertName}/>
+                 <label className="active" htmlFor="degree-name">Degree Name</label>
+               </div>
+               <div className="input-field col s12">
+                 <input defaultValue="" id="degree-id" type="text" className="validate" onChange={this.setCertID}/>
+                 <label className="active" htmlFor="degree-id">Degree Unique ID NO.</label>
+               </div>
+               <div className="input-field col s12">
+                 <input defaultValue="" id="degree-date" type="text" className="validate" onChange={this.setCertDate}/>
+                 <label className="active" htmlFor="degree-date">Degree Issuance Date</label>
+                 <input type="button" className="light-blue darken-1 btn" name="register" onClick={this.registerCert} id="degree-click" value="REGISTER"/>
+               </div>
+            </div>
           </div>
         </div>
     );
