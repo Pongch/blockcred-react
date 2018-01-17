@@ -5,6 +5,12 @@ import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 import ListIcon from 'mdi-react/FormatListBulletedIcon';
 import SchoolIcon from 'mdi-react/SchoolIcon';
+import ContactMailIcon from 'mdi-react/ContactMailIcon';
+import AccountCheckIcon from 'mdi-react/AccountCheckIcon';
+import DatabasePlusIcon from 'mdi-react/DatabasePlusIcon';
+import MagnifyIcon from 'mdi-react/MagnifyIcon';
+import {Icon, Navbar, NavItem, SideNav, SideNavItem, Button} from 'react-materialize';
+import Navigation from './Navigation';
 
 if (typeof web3 !== 'undefined') {
   var web3 = new Web3(web3.currentProvider);
@@ -93,18 +99,7 @@ class GetCert extends Component {
 
     return (
       <div>
-          <div className="navbar-fixed">
-            <nav className="amber darken-1 z-depth-4">
-              <div className="container">
-                <div className="nav-wrapper">
-                  <a href="/blockcred" className="brand-logo">BlockCred</a>
-                  <ul id="nav-mobile" className="right ">
-                    <li><ListIcon className="mdi-icon-white"/></li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-        </div>
+          <Navigation />
         <div className="container top-padding">
            <div className="row">
              <div className="col m6">

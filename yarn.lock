@@ -1621,6 +1621,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.2.5:
+  version "2.2.5"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
+
 clean-css@4.1.x:
   version "4.1.9"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.9.tgz#35cee8ae7687a49b98034f70de00c4edd3826301"
@@ -6360,7 +6364,7 @@ react-dom@^15.0.0:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-dom@^16.2.0:
+react-dom@^16.0.0, react-dom@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
   dependencies:
@@ -6378,6 +6382,14 @@ react-material-icons@^1.0.3:
   resolved "https://registry.yarnpkg.com/react-material-icons/-/react-material-icons-1.0.3.tgz#8974b06e00e20f60f21abe94b5d6db07f8a391d9"
   dependencies:
     create-react-class "15.6.0"
+
+react-materialize@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/react-materialize/-/react-materialize-1.1.2.tgz#f6a4872c224ac9c9718ff49c77786382484cc1cb"
+  dependencies:
+    classnames "^2.2.5"
+    react "^16.0.0"
+    react-dom "^16.0.0"
 
 react-router-dom@^4.2.2:
   version "4.2.2"
@@ -6455,7 +6467,7 @@ react@^15.0.0:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react@^16.2.0:
+react@^16.0.0, react@^16.2.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.2.0.tgz#a31bd2dab89bff65d42134fa187f24d054c273ba"
   dependencies:

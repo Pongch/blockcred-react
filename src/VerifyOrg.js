@@ -5,6 +5,7 @@ import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 import ListIcon from 'mdi-react/FormatListBulletedIcon';
 import SchoolIcon from 'mdi-react/SchoolIcon';
+import Navigation from './Navigation';
 
 if (typeof web3 !== 'undefined') {
   var web3 = new Web3(web3.currentProvider);
@@ -75,18 +76,7 @@ class VerifyOrg extends Component {
   render() {
     return (
       <div>
-          <div className="navbar-fixed">
-            <nav className="amber darken-1 z-depth-5">
-              <div className="container">
-                <div className="nav-wrapper">
-                  <a href="/blockcred" className="brand-logo">BlockCred</a>
-                  <ul id="nav-mobile" className="right ">
-                    <li><ListIcon className="mdi-icon-white"/></li>
-                  </ul>
-                </div>
-              </div>
-            </nav>
-        </div>
+        <Navigation />
         <div className="container top-padding">
           <div className="card-panel z-depth-4">
             <h3>Organization Check</h3>
