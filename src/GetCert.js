@@ -10,6 +10,7 @@ import AccountCheckIcon from 'mdi-react/AccountCheckIcon';
 import DatabasePlusIcon from 'mdi-react/DatabasePlusIcon';
 import MagnifyIcon from 'mdi-react/MagnifyIcon';
 import {Icon, Navbar, NavItem, SideNav, SideNavItem, Button} from 'react-materialize';
+import Notifications, {notify} from 'react-notify-toast';
 import Navigation from './Navigation';
 
 if (typeof web3 !== 'undefined') {
@@ -68,7 +69,6 @@ class GetCert extends Component {
 
   getCert(){
     let queryID = this.state.certID;
-    console.log(queryID)
     block.getCertificateById(queryID, (error, res) => {
       if(!error){
         this.setState({
@@ -76,9 +76,13 @@ class GetCert extends Component {
           certName: res[3],
           date: res[2],
           org: res[4]
+        }, (error, res) => {
+          if(!error){
+            notify.show(`${this.state.person}'s Credential retrieved from the Blockchain`, "warning", 2000);
+          }
         })
       } else {
-        console.log("error");
+        notify.show('Cant connect to the Blockchain! Make sure you are connected to the Internet')
       }
     })
   }
@@ -89,10 +93,15 @@ class GetCert extends Component {
       if(!error){
         this.setState({
           orgAttest: res[0]
+        }, (error, res) => {
+          if(!error){
+            notify.show(`This Credential is issued from ${this.state.orgAttest}`, "warning", 2000);
+          }
         })
       }
     })
   }
+
 
   render() {
 
@@ -129,6 +138,9 @@ class GetCert extends Component {
                    <p className="center-align">Issued by:</p>
                    <p className="center-align small-text">{this.state.org}</p>
                 </div>
+             </div>
+             <div className='main'>
+              <Notifications />
              </div>
           </div>
       </div>

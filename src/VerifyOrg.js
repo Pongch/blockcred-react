@@ -6,6 +6,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import ListIcon from 'mdi-react/FormatListBulletedIcon';
 import SchoolIcon from 'mdi-react/SchoolIcon';
 import Navigation from './Navigation';
+import Notifications, {notify} from 'react-notify-toast';
 
 if (typeof web3 !== 'undefined') {
   var web3 = new Web3(web3.currentProvider);
@@ -65,6 +66,8 @@ class VerifyOrg extends Component {
         this.setState({
           orgName: res[0],
           orgEmail: res[1]
+        }, (error, res) => {
+          notify.show(`${this.state.orgName} is verified on the Blockchain`, "warning", 3000);
         })
         console.log(res);
       } else {
@@ -91,6 +94,9 @@ class VerifyOrg extends Component {
           <div className="card-panel z-depth-4">
             <p>Organization Name:</p> {this.state.orgName}
             <p>Organization Email:</p> {this.state.orgEmail}
+          </div>
+          <div className='main'>
+           <Notifications />
           </div>
         </div>
       </div>

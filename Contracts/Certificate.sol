@@ -16,6 +16,7 @@ contract Certificate {
 
 
     //creates certificates and prevent duplicates of IDs
+    
     function setCertificate(uint256 id, string name, string certDate, string certName) {
         for(i=0; i<count; i++){
             require(records[i].id != id);

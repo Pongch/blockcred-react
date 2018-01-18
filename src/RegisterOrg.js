@@ -6,6 +6,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import ListIcon from 'mdi-react/FormatListBulletedIcon';
 import SchoolIcon from 'mdi-react/SchoolIcon';
 import Navigation from './Navigation';
+import Notifications, {notify} from 'react-notify-toast';
 
 
 if (typeof window.web3 !== 'undefined') {
@@ -49,8 +50,8 @@ class RegisterOrg extends Component {
     this.registerOrg = this.registerOrg.bind(this);
   }
 
-  componentWillMount(){
-
+  componentDidMount(){
+    notify.show("Make sure you have Metamask Installed with Rinkeby Network", "warning", 2000)
   }
 
 
@@ -94,6 +95,9 @@ class RegisterOrg extends Component {
                <input type="button" className="light-blue darken-1 btn" name="register" onClick={this.registerOrg} id="degree-click" value="REGISTER"/>
              </div>
             </div>
+          </div>
+          <div className='main'>
+           <Notifications />
           </div>
         </div>
     );

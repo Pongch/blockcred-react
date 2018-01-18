@@ -6,6 +6,7 @@ import 'materialize-css/dist/css/materialize.min.css';
 import ListIcon from 'mdi-react/FormatListBulletedIcon';
 import SchoolIcon from 'mdi-react/SchoolIcon';
 import Navigation from './Navigation';
+import Notifications, {notify} from 'react-notify-toast';
 
 
 if (typeof window.web3 !== 'undefined') {
@@ -52,10 +53,12 @@ class RegisterCert extends Component {
     this.setCertName = this.setCertName.bind(this);
     this.setCertDate = this.setCertDate.bind(this);
     this.registerCert = this.registerCert.bind(this);
+
+
   }
 
-  componentWillMount(){
-
+  componentDidMount(){
+    notify.show(`Make sure you are connected to Rinkeby Network with Metamask Installed `, "warning", 2500);
   }
 
   setCertID(event){
@@ -86,8 +89,10 @@ class RegisterCert extends Component {
 
     block.setCertificate(certID, person, certDate, certName, {from: web3.eth.accounts[0]},(error, res) => {
       if(!error){
-        console.log(res);
-        }
+        notify.show(`Certificate for ${this.state.person} has been successfully stored on the Blockchain`, "warning", 2000)
+      } else {
+        notify.show(`Can't connect to Ethereum Blockchain's Rinkeby Network`, "error", 4000)
+      }
     });
   }
 
@@ -118,6 +123,9 @@ class RegisterCert extends Component {
                  <input type="button" className="light-blue darken-1 btn" name="register" onClick={this.registerCert} id="degree-click" value="REGISTER"/>
                </div>
             </div>
+          </div>
+          <div className='main'>
+           <Notifications />
           </div>
         </div>
     );
