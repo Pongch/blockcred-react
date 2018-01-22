@@ -13,6 +13,7 @@ import {Icon, Navbar, NavItem, SideNav, SideNavItem, Button} from 'react-materia
 import Notifications, {notify} from 'react-notify-toast';
 import Navigation from './Navigation';
 
+
 if (typeof web3 !== 'undefined') {
   var web3 = new Web3(web3.currentProvider);
 } else {

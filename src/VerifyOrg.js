@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
-import './App.css';
 import Web3 from 'web3';
+import './App.css';
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
-import ListIcon from 'mdi-react/FormatListBulletedIcon';
+import ListIcon from 'mdi-react/FormatListBulleted  Icon';
 import SchoolIcon from 'mdi-react/SchoolIcon';
 import Navigation from './Navigation';
 import Notifications, {notify} from 'react-notify-toast';
 
-if (typeof web3 !== 'undefined') {
-  var web3 = new Web3(web3.currentProvider);
+if (typeof window.web3 !== 'undefined') {
+  var web3 = new Web3(window.web3.currentProvider);
+  console.log("using web3 provider like Metamask")
 } else {
-  // set the provider you want from Web3.providers
-  var web3 = new Web3(new Web3.providers.HttpProvider("https://rinkeby.infura.io/CT0ypkZhkZ8gm2pLeyD0"));
+  var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
 }
+
 
 var Organization =
 web3.eth.contract(
@@ -22,7 +23,6 @@ web3.eth.contract(
 
 let org = Organization.at("0x516e8e58a460d3f1384bc32ff2326f2333e77772");
 
-console.log(org);
 
 var BlockCert =
 web3.eth.contract(

@@ -37,8 +37,8 @@ class Navigation extends Component {
           >
           <SideNavItem userView
             user={{
-              background: 'https://gateway.ipfs.io/ipns/QmexAZwMvirYD8dyfzj6uhYKZvcf8mvSn2AeAUvBuUY4hL/material-icon.jpg',
-              image: 'https://gateway.ipfs.io/ipns/QmexAZwMvirYD8dyfzj6uhYKZvcf8mvSn2AeAUvBuUY4hL/ASIC_Icon.png',
+              background: 'https://gateway.ipfs.io/ipfs/QmNwAaxhTQ4LQeM2xmjFS29fU2hKY4qsXqUoEkAhUbKjMF',
+              image: 'https://gateway.ipfs.io/ipfs/QmaqGPJjnL55xd867fmgieFPzqZBdEvpdnmXpFHJzB8uYo',
               name: 'Welcome to BlockCred',
               email: 'Version 0.1.5'
             }}
