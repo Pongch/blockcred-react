@@ -3,7 +3,7 @@ import Web3 from 'web3';
 import './App.css';
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
-import ListIcon from 'mdi-react/FormatListBulleted  Icon';
+import ListIcon from 'mdi-react/FormatListBulletedIcon';
 import SchoolIcon from 'mdi-react/SchoolIcon';
 import Navigation from './Navigation';
 import Notifications, {notify} from 'react-notify-toast';
