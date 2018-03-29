@@ -3,14 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
   background-color: #E6E8EB;
+  background-image: url('https://ismade.org/wp-content/uploads/2017/08/Tec-Background-compressor-1.jpg');
 }
 
 div.container.top-padding{
   margin-top: 5em;
 }
 
-.dark-orange{
-  fill:#FFA907;
+.dark-grey{
+  fill:#56585A;
 }
 
 /* label color */
@@ -43,4 +44,12 @@ div.container.top-padding{
 
 p.center-align.small-text {
   font-size:0.7em;
+}
+
+nav .brand-logo {
+  color: #56585A!important;
+}
+
+.made-logo {
+  margin-top: 5px!important;
 }

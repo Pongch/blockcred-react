@@ -92,7 +92,7 @@ class RegisterOrg extends Component {
              <div className="input-field col s12">
                <input defaultValue="" id="degree-name" type="text" className="validate" onChange={this.setOrgEmail}/>
                <label className="active" htmlFor="degree-name">Organization Email</label>
-               <input type="button" className="light-blue darken-1 btn" name="register" onClick={this.registerOrg} id="degree-click" value="REGISTER"/>
+               <input type="button" className="grey darken-3 btn" name="register" onClick={this.registerOrg} id="degree-click" value="REGISTER"/>
              </div>
             </div>
           </div>

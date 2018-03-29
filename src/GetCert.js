@@ -46,7 +46,7 @@ class GetCert extends Component {
     super(props);
 
     this.state = {
-      certID: "173820172",
+      certID: "1100234142",
       person:"...",
       certName:"...",
       date:"...",
@@ -118,21 +118,21 @@ class GetCert extends Component {
                  <div className="input-field">
                  <input type="text" className="validate" id="cert-id" name="id" defaultValue={this.state.certID} onChange={this.setID}/>
                  <label htmlFor="cert" className="active">Certificate ID</label>
-                 <button className="light-blue darken-1 btn" id="cert-click" onClick={this.getCert}>Get Certificate</button>
+                 <button className="grey darken-3 btn" id="cert-click" onClick={this.getCert}>Get Certificate</button>
                  </div>
                </div>
                <div className="card-panel z-depth-4">
-                 <button className="light-blue darken-1 btn" id="authenticate-click" onClick={this.getOrg}>Check Issuer</button>
+                 <button className="grey darken-3 btn" id="authenticate-click" onClick={this.getOrg}>Check Issuer</button>
                  <p>This certificate is issued from:</p>
                  <h5>{this.state.orgAttest}</h5>
                </div>
              </div>
              <div className="col m6">
                <div className="card-panel z-depth-4">
-                   <h5 className="center-align"><SchoolIcon style={{width: 64, height: 64}} className="dark-orange"/></h5>
+                   <h5 className="center-align"><SchoolIcon style={{width: 64, height: 64}} className="dark-grey"/></h5>
                    <h5 className="center-align">To all persons be it known that</h5>
                    <h5 className="center-align">{this.state.person}</h5>
-                   <p className="center-align">has completed the prescribed studies and satisfied the requirement for:</p>
+                   <p className="center-align">has completed the workshop and satisfied the requirement for:</p>
                    <h5 className="center-align">{this.state.certName}</h5>
                    <p className="center-align">at the date:</p>
                    <h5 className="center-align">{this.state.date}</h5>

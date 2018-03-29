@@ -21,12 +21,12 @@ class Navigation extends Component {
         <SideNav
           trigger={
             <div className="navbar-fixed">
-              <nav className="amber darken-1 z-depth-2">
+              <nav className="grey lighten-5 z-depth-2">
                 <div className="container">
                   <div className="nav-wrapper">
-                    <a href="/blockcred" className="brand-logo">BlockCred</a>
+                    <a href="/blockcred" className="brand-logo"><img className="made-logo" src="https://ismade.org/wp-content/uploads/2017/09/made-250x50.png" /></a>
                     <ul id="nav-mobile" className="right ">
-                      <li><ListIcon className="mdi-icon-white"/></li>
+                      <li><ListIcon className="mdi-icon-grey"/></li>
                     </ul>
                   </div>
                 </div>
@@ -37,9 +37,9 @@ class Navigation extends Component {
           >
           <SideNavItem userView
             user={{
-              background: 'https://gateway.ipfs.io/ipfs/QmNwAaxhTQ4LQeM2xmjFS29fU2hKY4qsXqUoEkAhUbKjMF',
-              image: 'https://gateway.ipfs.io/ipfs/QmaqGPJjnL55xd867fmgieFPzqZBdEvpdnmXpFHJzB8uYo',
-              name: 'Welcome to BlockCred',
+              background: 'https://ismade.org/wp-content/uploads/2016/11/Bangkok1-1-compressor.jpg',
+              image: 'https://instagram.fbkk4-2.fna.fbcdn.net/vp/b63ef53eda6a41faa930f1850eb5f9aa/5B757F2E/t51.2885-19/s150x150/22710452_1869940249984406_9165433482082516992_n.jpg',
+              name: 'KX Made',
               email: 'Version 0.1.5'
             }}
           />

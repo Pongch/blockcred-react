@@ -40,7 +40,7 @@ class VerifyOrg extends Component {
     super(props);
 
     this.state = {
-      orgID: "0x6a36580fa59f1b8f4865444ab9fe9168b625981c",
+      orgID: "0xBddeAeE01f00e02c081D36c100D5DEe723cB9E17",
       orgName: "...",
       orgEmail: "..."
     }
@@ -87,7 +87,7 @@ class VerifyOrg extends Component {
                <div className="input-field col s6">
                  <input defaultValue="0x6a36580fa59f1b8f4865444ab9fe9168b625981c" id="org-id" type="text" className="validate" onChange={this.setOrgID}/>
                  <label className="active" htmlFor="first_name2">Organization's address</label>
-                 <input type="button" className="light-blue darken-1 btn" name="Find" id="org-click" defaultValue="Find" onClick={this.getOrg}/>
+                 <input type="button" className="grey darken-3 btn" name="Find" id="org-click" defaultValue="Find" onClick={this.getOrg}/>
                </div>
               </div>
           </div>

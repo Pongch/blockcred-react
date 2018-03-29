@@ -120,7 +120,7 @@ class RegisterCert extends Component {
                <div className="input-field col s12">
                  <input defaultValue="" id="degree-date" type="text" className="validate" onChange={this.setCertDate}/>
                  <label className="active" htmlFor="degree-date">Degree Issuance Date</label>
-                 <input type="button" className="light-blue darken-1 btn" name="register" onClick={this.registerCert} id="degree-click" value="REGISTER"/>
+                 <input type="button" className="grey darken-3 btn" name="register" onClick={this.registerCert} id="degree-click" value="REGISTER"/>
                </div>
             </div>
           </div>
